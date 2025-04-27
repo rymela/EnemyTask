@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define SCREEN_W 1024
-#define SCREEN_H 768
+#define SCREEN_W 1920
+#define SCREEN_H 1080
 
 // Function to check player collision with background mask
 int checkPlayerCollision(SDL_Rect intendedPos, SDL_Surface *worldMask, int dx, int dy) {
@@ -90,7 +90,7 @@ int main() {
     }
 
     Entity enemy;
-    initEntity(&enemy, "sprites.png", 324, 555);
+    initEntity(&enemy, "Swordsman_spritelist.png", 324, 555);
     enemy.attackRange = 80;
 
     bool running = true;
@@ -123,7 +123,7 @@ int main() {
                         break;
                     case SDLK_LEFT: {
                         SDL_Rect intendedPos = playerPos;
-                        intendedPos.x -= 10;
+                        intendedPos.x -= 50;
                         if (intendedPos.x >= 0 && !checkPlayerCollision(intendedPos, worldMask, -10, 0)) {
                             playerPos.x = intendedPos.x;
                         }
@@ -131,7 +131,7 @@ int main() {
                     }
                     case SDLK_RIGHT: {
                         SDL_Rect intendedPos = playerPos;
-                        intendedPos.x += 10;
+                        intendedPos.x += 50;
                         if (intendedPos.x <= SCREEN_W - playerPos.w && !checkPlayerCollision(intendedPos, worldMask, 10, 0)) {
                             playerPos.x = intendedPos.x;
                         }
@@ -139,7 +139,7 @@ int main() {
                     }
                     case SDLK_UP: {
                         SDL_Rect intendedPos = playerPos;
-                        intendedPos.y -= 10;
+                        intendedPos.y -= 50;
                         if (intendedPos.y >= 0 && !checkPlayerCollision(intendedPos, worldMask, 0, -10)) {
                             playerPos.y = intendedPos.y;
                         }
@@ -147,7 +147,7 @@ int main() {
                     }
                     case SDLK_DOWN: {
                         SDL_Rect intendedPos = playerPos;
-                        intendedPos.y += 10;
+                        intendedPos.y += 50;
                         if (intendedPos.y <= SCREEN_H - playerPos.h && !checkPlayerCollision(intendedPos, worldMask, 0, 10)) {
                             playerPos.y = intendedPos.y;
                         }

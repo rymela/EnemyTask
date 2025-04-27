@@ -10,7 +10,8 @@ typedef enum {
     STATE_HURT = 2,     // Hurt animation row
     STATE_DEAD = 3,     // Death animation row
     STATE_ATTACK_RIGHT = 4,  // Attack right animation row
-    STATE_ATTACK_LEFT = 5    // Attack left animation row
+    STATE_ATTACK_LEFT = 5,   // Attack left animation row
+    STATE_CHASE = 6     // Chasing player state
 } EntityState;
 #define ATTACK_ROW 4
 
@@ -34,6 +35,13 @@ typedef struct {
     int attackCooldown;
     int health; // Current health
     int maxHealth; // Maximum health
+
+    // Patrol and chase parameters
+    int patrolOriginX;    // Starting X position of patrol
+    int patrolRange;      // Distance to patrol left and right from origin
+    int detectionRange;   // Range to detect player and start chasing
+    int followRange;      // Range to stop chasing player
+    bool isReturning;     // Flag to indicate returning to patrol
 } Entity;
 
 // Entity functions
