@@ -53,6 +53,7 @@ void triggerDeath(Entity *e);
 void triggerAttack(Entity *e);
 void freeEntity(Entity *e);
 int checkPlayerInRange(Entity *enemy, SDL_Rect playerPos);
+int checkPlayerAttackRange(Entity *enemy, SDL_Rect playerPos);
 int CollisionParfaite_PNG(Entity *e, SDL_Surface *worldMask, int dx, int dy);
 
 ///////////////////////////////////// PLAYER  //////////////////////////////////////

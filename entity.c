@@ -41,7 +41,7 @@ void initEntity(Entity *e, const char *imgPath, int x, int y) {
     e->isHurt = false;
     e->isAttacking = false;
     e->lastAttackTime = 0;
-    e->attackRange = 150;
+    e->attackRange = 100;
     e->attackCooldown = 2000;
     e->health = 100;
     e->maxHealth = 100;
@@ -406,9 +406,24 @@ void triggerAttack(Entity *e) {
     e->currentFrame = 0;
     e->lastUpdate = SDL_GetTicks();
     e->lastAttackTime = SDL_GetTicks();
+    printf("Entity attacks player at position (%d, %d)!\n", e->posScreen.x, e->posScreen.y);
 }
 
 int checkPlayerInRange(Entity *enemy, SDL_Rect playerPos) {
+    if (!enemy) return 0;
+    int enemyCenterX = enemy->posScreen.x + enemy->posScreen.w/2;
+    int enemyCenterY = enemy->posScreen.y + enemy->posScreen.h/2;
+    int playerCenterX = playerPos.x + playerPos.w/2;
+    int playerCenterY = playerPos.y + playerPos.h/2;
+    
+    int dx = enemyCenterX - playerCenterX;
+    int dy = enemyCenterY - playerCenterY;
+    int distanceSquared = dx*dx + dy*dy;
+    
+    return (distanceSquared < (enemy->attackRange * enemy->attackRange));
+}
+
+int checkPlayerAttackRange(Entity *enemy, SDL_Rect playerPos) {
     if (!enemy) return 0;
     int enemyCenterX = enemy->posScreen.x + enemy->posScreen.w/2;
     int enemyCenterY = enemy->posScreen.y + enemy->posScreen.h/2;
