@@ -198,8 +198,9 @@ int main()
 
     SDL_FreeSurface(world);
     SDL_FreeSurface(worldMask);
-    freePlayer(&player);
     freeEntity(&enemy);
+    freePlayer(&player);
+    
     saveCoinsToFile();
     freeCoinSystem();
     IMG_Quit();

@@ -5,15 +5,14 @@
 #include <stdbool.h>
 
 typedef enum {
-    DIR_RIGHT = 0,      // Walking right animation row
-    DIR_LEFT = 1,       // Walking left animation row
-    STATE_HURT = 2,     // Hurt animation row
-    STATE_DEAD = 3,     // Death animation row
-    STATE_ATTACK_RIGHT = 4,  // Attack right animation row
-    STATE_ATTACK_LEFT = 5,   // Attack left animation row
-    STATE_CHASE = 6     // Chasing player state
+    DIR_RIGHT = 0,      // Walking right animation row (sprite sheet row 0)
+    DIR_LEFT = 1,       // Walking left animation row (sprite sheet row 1)
+    STATE_HURT = 2,     // Hurt animation row (sprite sheet row 2)
+    STATE_DEAD = 3,     // Death animation row (sprite sheet row 3)
+    STATE_ATTACK_RIGHT = 4,  // Attack right animation row (sprite sheet row 4)
+    STATE_ATTACK_LEFT = 5,   // Attack left animation row (sprite sheet row 5)
+    STATE_CHASE = 6     // Chasing player state (uses DIR_RIGHT or DIR_LEFT animation)
 } EntityState;
-#define ATTACK_ROW 4
 
 typedef struct {
     SDL_Surface *sprite;

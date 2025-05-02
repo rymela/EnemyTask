@@ -19,6 +19,7 @@ void initEntity(Entity *e, const char *imgPath, int x, int y) {
         printf("Error loading sprite %s: %s\n", imgPath, IMG_GetError());
         exit(1);
     }
+    printf("Loaded sprite %s: %dx%d pixels\n", imgPath, e->sprite->w, e->sprite->h);
 
     e->posScreen.x = x;
     e->posScreen.y = y;
@@ -91,7 +92,7 @@ void updateEntity(Entity *e, int screenW, int screenH, SDL_Rect playerPos, SDL_S
             
             if (e->state == STATE_ATTACK_RIGHT) {
                 e->posScreen.x += e->speed;
-            } else {
+            } else if (e->state == STATE_ATTACK_LEFT) {
                 e->posScreen.x -= e->speed;
             }
             
@@ -404,9 +405,13 @@ void triggerAttack(Entity *e) {
     
     e->isAttacking = true;
     e->currentFrame = 0;
+    e->frameRect.x = 0;
+    e->frameRect.y = e->state * 128;
     e->lastUpdate = SDL_GetTicks();
     e->lastAttackTime = SDL_GetTicks();
-    printf("Entity attacks player at position (%d, %d)!\n", e->posScreen.x, e->posScreen.y);
+    printf("Entity attacks %s at position (%d, %d), frameRect.y=%d!\n",
+           e->state == STATE_ATTACK_RIGHT ? "right" : "left",
+           e->posScreen.x, e->posScreen.y, e->frameRect.y);
 }
 
 int checkPlayerInRange(Entity *enemy, SDL_Rect playerPos) {
