@@ -1,0 +1,36 @@
+# Doxyfile for Entity Task Project
+
+# Project settings
+PROJECT_NAME           = "Entity Task Project"
+PROJECT_NUMBER         = 1.4
+PROJECT_BRIEF          = "SDL 1.2 Game with Enemy AI"
+OUTPUT_DIRECTORY       = doxygen_docs
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# Input
+INPUT                  = .
+FILE_PATTERNS          = *.c *.h
+RECURSIVE              = NO
+
+# Documentation extraction
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+
+# HTML settings
+HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES   #
+
+# Enable source browser
+SOURCE_BROWSER         = YESf
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# Misc
+QUIET                  = NO
+WARNINGS               = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md
+INPUT                  = . README.md

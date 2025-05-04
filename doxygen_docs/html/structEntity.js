@@ -1,0 +1,25 @@
+var structEntity =
+[
+    [ "animSpeed", "structEntity.html#a187275c3f60950adb2d37f138eff4e1f", null ],
+    [ "attackCooldown", "structEntity.html#a69a03172426c320f7e66a01f5f5e3eff", null ],
+    [ "attackRange", "structEntity.html#a07a3f0c937f9bcea222b9c5a4760e4e7", null ],
+    [ "currentFrame", "structEntity.html#a1c826bef4907b26da47fb618726a39c9", null ],
+    [ "detectionRange", "structEntity.html#a28a01aba6fdceaa263b1b2d33d14ca36", null ],
+    [ "dirFacing", "structEntity.html#a42f16218da3623891e247d494f139de6", null ],
+    [ "followRange", "structEntity.html#afb389530c8470958e4f6b90e049bbd47", null ],
+    [ "frameCount", "structEntity.html#a2e36ae5f2863e5921ee0ff9c77cd4df4", null ],
+    [ "frameRect", "structEntity.html#af75e30e0063f2a4403804f7921a2cd8b", null ],
+    [ "health", "structEntity.html#ab5bf0c97620636e04b271601e2133884", null ],
+    [ "isAttacking", "structEntity.html#a3f1497b1c6dc4d9c57f31cd6aaee5423", null ],
+    [ "isHurt", "structEntity.html#a4ccb5b50117ee34afbe289b385c985f3", null ],
+    [ "isReturning", "structEntity.html#a34e7b300364b85ec1bdb691d7c4a788b", null ],
+    [ "lastAttackTime", "structEntity.html#a4dc8f4b3d293b0cd167c6d52f2083dae", null ],
+    [ "lastUpdate", "structEntity.html#aa4f1f882d2afbb97eb50deb246a9edc4", null ],
+    [ "maxHealth", "structEntity.html#a6e20c965f14c04d09be06d07a471565d", null ],
+    [ "patrolOriginX", "structEntity.html#a4cd0b956b37c9463a584e797ed2ea52f", null ],
+    [ "patrolRange", "structEntity.html#a87c9cc58de547adda59361d20fa14d22", null ],
+    [ "posScreen", "structEntity.html#a931055e69c465d1e89248771a4dcf770", null ],
+    [ "speed", "structEntity.html#a12ea871d945d59cbf57b8f8f7d2179ed", null ],
+    [ "sprite", "structEntity.html#ab2043d6773555b769c14a91e365d605d", null ],
+    [ "state", "structEntity.html#a5a61b24410d1e9e7560ab142cf439dc8", null ]
+];
